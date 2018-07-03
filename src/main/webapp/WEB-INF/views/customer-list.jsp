@@ -36,11 +36,13 @@
                         <c:param name="id" value="${customer.id}"/>
                     </c:url>"
                            class="btn btn-info">Update</a>
+                    <security:authorize access="hasRole('ADMIN')">
                         <a href="
                     <c:url value="/customer/delete">
                         <c:param name="id" value="${customer.id}"/>
                     </c:url>"
                            class="btn btn-warning" onclick="if (!(confirm('Are you sure to delete this customer?'))) return false">Delete</a>
+                    </security:authorize>
                 </td>
             </tr>
         </c:forEach>
