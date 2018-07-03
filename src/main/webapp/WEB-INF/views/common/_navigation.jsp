@@ -15,7 +15,7 @@
     <a class="navbar-brand" href="/">CRM App</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <security:authorize access="hasRole('ADMIN')">
+            <security:authorize access="hasAnyRole('ADMIN', 'MANAGER')">
                 <li class="nav-item active">
                     <a class="nav-link" href="/customer/list">Customer</a>
                 </li>

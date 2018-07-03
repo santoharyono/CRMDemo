@@ -16,7 +16,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-//    @Qualifier("customUserDetailsService")
     private UserDetailsService customUserDetailsService;
 
     @Bean
@@ -41,8 +40,8 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").hasRole("USER")
-                .antMatchers("/customer/**").hasRole("ADMIN")
+                .antMatchers("/").authenticated()
+                .antMatchers("/customer/**").hasAnyRole("ADMIN", "MANAGER")
                 .and().formLogin().loginPage("/login").loginProcessingUrl("/authenticate").permitAll()
                 .and().logout().permitAll()
                 .and()

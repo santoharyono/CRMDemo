@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.*;
 @Configuration
 @EnableWebMvc
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@ComponentScan("com.mitrais.controller")
+@ComponentScan(basePackages = {"com.mitrais.controller"})
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
