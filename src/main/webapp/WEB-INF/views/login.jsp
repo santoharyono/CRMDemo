@@ -37,7 +37,7 @@
                     </div>
                 </c:if>
 
-                <form:form id="loginform" action="/authenticate" class="form-horizontal" role="form">
+                <form:form id="loginform" action="${pageContext.request.contextPath}/authenticate" class="form-horizontal" role="form">
 
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
