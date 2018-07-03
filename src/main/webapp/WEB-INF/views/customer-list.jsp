@@ -15,7 +15,7 @@
 <body>
 <div id="container">
     <h2>CRM - Customer Relationship Manager</h2>
-    <a href="<c:url value="/customer/add"/>" class="btn btn-outline-primary">Add Customer</a>
+    <a href="<c:url value="${pageContext.request.contextPath}/customer/add"/>" class="btn btn-outline-primary">Add Customer</a>
     <table class="table table-hover">
         <thead class="thead-light">
         <tr>
@@ -32,13 +32,13 @@
                 <td>${customer.lastName}</td>
                 <td>${customer.email}</td>
                 <td><a href="
-                    <c:url value="/customer/save">
+                    <c:url value="${pageContext.request.contextPath}/customer/save">
                         <c:param name="id" value="${customer.id}"/>
                     </c:url>"
                            class="btn btn-info">Update</a>
                     <security:authorize access="hasRole('ADMIN')">
                         <a href="
-                    <c:url value="/customer/delete">
+                    <c:url value="${pageContext.request.contextPath}/customer/delete">
                         <c:param name="id" value="${customer.id}"/>
                     </c:url>"
                            class="btn btn-warning" onclick="if (!(confirm('Are you sure to delete this customer?'))) return false">Delete</a>

@@ -11,14 +11,14 @@
 <html>
 <head>
     <title>Customer Details</title>
-    <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
-    <script src="<c:url value="/resources/jquery/jquery-3.3.1.min.js"/>"></script>
-    <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+    <link href="<c:url value="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"/>" rel="stylesheet">
+    <script src="<c:url value="${pageContext.request.contextPath}/resources/jquery/jquery-3.3.1.min.js"/>"></script>
+    <script src="<c:url value="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"/>"></script>
 </head>
 <body>
 <div class="container">
     <h2>Customer</h2>
-    <form:form method="post" action="save" modelAttribute="customer">
+    <form:form method="post" action="${pageContext.request.contextPath}/save" modelAttribute="customer">
         <form:hidden path="id"/>
         <fieldset class="form-group">
             <form:label path="firstName">First Name</form:label>
@@ -33,7 +33,7 @@
             <form:input path="email" type="email" cssClass="form-control"/>
         </fieldset>
         <input type="submit" class="btn btn-success" value="Save"/>
-        <a href="<c:url value="/customer/list"/>" class="btn btn-dark">Cancel</a>
+        <a href="<c:url value="${pageContext.request.contextPath}/customer/list"/>" class="btn btn-dark">Cancel</a>
     </form:form>
 </div>
 </body>

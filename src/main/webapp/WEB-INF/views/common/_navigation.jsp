@@ -8,7 +8,6 @@
 <%@include file="_header.jsp" %>
 <html>
 <head>
-
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -17,14 +16,14 @@
         <ul class="navbar-nav mr-auto">
             <security:authorize access="hasAnyRole('ADMIN', 'MANAGER')">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/customer/list">Customer</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/customer/list">Customer</a>
                 </li>
             </security:authorize>
             <li class="nav-item">
-                <a class="nav-link" href="/another">Another Menu</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/another">Another Menu</a>
             </li>
         </ul>
-        <form:form action="/logout" cssClass="form-inline my-2 my-lg-0" method="post">
+        <form:form action="${pageContext.request.contextPath}/logout" cssClass="form-inline my-2 my-lg-0" method="post">
             <input type="submit" class="btn btn-primary" value="Log out">
         </form:form>
     </div>
