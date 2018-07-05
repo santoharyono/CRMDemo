@@ -1,5 +1,5 @@
 # CRMDemo
 
-Simple Web app using spring MVC, spring Security and MySql Database
+RMS studycase using Spring MVC, Spring Security and MySql
 
 password login : admin@123
