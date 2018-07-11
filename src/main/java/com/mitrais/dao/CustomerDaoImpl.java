@@ -24,9 +24,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
         Query<Customer> sql = session.createQuery("from Customer order by lastName", Customer.class);
 
-        List<Customer> customers = sql.getResultList();
-
-        return customers;
+        return sql.getResultList();
     }
 
     @Override
@@ -40,9 +38,7 @@ public class CustomerDaoImpl implements CustomerDao {
     public Customer get(int id) {
         Session session = sessionFactory.getCurrentSession();
 
-        Customer customer = session.get(Customer.class, id);
-
-        return customer;
+        return session.get(Customer.class, id);
     }
 
     @Override

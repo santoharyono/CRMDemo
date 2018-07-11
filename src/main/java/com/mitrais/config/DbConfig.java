@@ -10,7 +10,6 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Properties;
-import java.util.logging.Logger;
 
 import static org.hibernate.cfg.Environment.*;
 
@@ -21,7 +20,6 @@ import static org.hibernate.cfg.Environment.*;
 public class DbConfig {
 
     private Environment environment;
-    private Logger logger = Logger.getLogger(getClass().getName());
 
     public DbConfig(Environment environment) {
         this.environment = environment;

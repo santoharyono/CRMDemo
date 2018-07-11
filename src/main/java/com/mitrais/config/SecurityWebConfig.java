@@ -25,15 +25,6 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        // TODO: change to database authentication
-//        User.UserBuilder users = User.withDefaultPasswordEncoder();
-//
-//        auth.inMemoryAuthentication()
-//                .withUser(users.username("user").password("user123").roles("EMPLOYEE"))
-//                .withUser(users.username("admin").password("admin@123").roles("EMPLOYEE", "ADMIN"))
-//                .withUser(users.username("manager").password("manager123").roles("EMPLOYEE", "MANAGER"));
-//        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
         auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
     }
 

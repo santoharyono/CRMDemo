@@ -28,9 +28,7 @@ public class CustomerService {
 
     @Transactional
     public Customer get(int id) {
-        Customer customer = customerDao.get(id);
-
-        return  customer;
+        return customerDao.get(id);
     }
 
     @Transactional
